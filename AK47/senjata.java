@@ -5,13 +5,11 @@ import java.util.concurrent.TimeUnit;
 class senjata {
   String namaSenjata;
   int jumlahpeluru;
-  
-  
 
   void tembak() {
     if (jumlahpeluru <= 0) {
       System.out.println("peluru kosong.....");
-     reload();
+      reload();
     } else {
       System.out.println("menembak peluru.....");
       jumlahpeluru--;
@@ -19,20 +17,20 @@ class senjata {
     }
   }
 
-
   void reload() {
     System.out.println("reloading....");
-    tunggu();
-  }
-  
-  private void tunggu () {
+
     try {
-      TimeUnit.SECONDS.sleep(5);
+
+      TimeUnit.SECONDS.sleep(2);
       jumlahpeluru = 30;
       System.out.println("Senjata siap di gunakan lagi");
+      System.out.println("Peluru : " + jumlahpeluru);
     } catch (InterruptedException e) {
+
       Thread.currentThread().interrupt();
-      
+
     }
   }
+
 }
